@@ -32,6 +32,17 @@ VALUES
       (6, 'Ma Maison', 	'Jean-Guy Lauzon', '(514) 555-9022', Null, '2960 Rue St. Laurent', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' ),
       (7, 'Heli Süßwaren GmbH & Co. KG', 'Petra Winkler' , '(010) 9984510' , Null, 'Tiergartenstraße 5', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00') ,
       (8, 'Plutzer Lebensmittelgroßmärkte AG', 'Martin Bein', '(069) 992755', Null, 'Bogenallee 51' , '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' ),
-	  (9, 'Nord-Ost-Fisch Handelsgesellschaft mbH', 'Sven Petersen', '(04721) 8713', Null, 'Frahmredder 112a', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' );
+	(9, 'Nord-Ost-Fisch Handelsgesellschaft mbH', 'Sven Petersen', '(04721) 8713', Null, 'Frahmredder 112a', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' );
+
+INSERT INTO products (id, name, description, supplier_id, category_id, price, stock_quantity, created_at, updated_at )
+VALUES
+	(1, 'Aniseed Syrup', '12 - 550 ml bottles', 1, 2, 10, 12, '2025-04-07T05:27:47+00:00', '2025-04-07T05:27:47+00:00'),
+	(2, 'Chef Anton Seasoning', '48 - 6 oz jars', 2, 2, 22, 48, '2025-04-07T05:27:47+00:00', '2025-04-07T05:27:47+00:00'),
+	(3, 'Gumbo Mix', '36 boxes', 2, 2, 21.35, 36, '2025-04-07T05:27:47+00:00', '2025-04-07T05:27:47+00:00'),
+	(4, 'Boysenberry Spread', '12 - 8 oz jars', 3, 2, 25, 12, '2025-04-07T05:27:47+00:00', '2025-04-07T05:27:47+00:00'),
+	(5, 'Organic Dried Pears', '12 - 1 lb pkgs.', 3, 7, 30, 12, '2025-04-07T05:27:47+00:00', '2025-04-07T05:27:47+00:00'),
+	(6, 'Cranberry Sauce', '12 - 12 oz jars', 3, 2, 40, 12, '2025-04-07T05:27:47+00:00', '2025-04-07T05:27:47+00:00'),
+	(7, 'Konbu', '2 kg box ', 6, 8, 6, 2, '2025-04-07T05:27:47+00:00', '2025-04-07T05:27:47+00:00'),
+	(8, 'Tofu', '40 - 100 g pkgs.', 6, 7, 23.25, 40, '2025-04-07T05:27:47+00:00', '2025-04-07T05:27:47+00:00');
 
 	  
