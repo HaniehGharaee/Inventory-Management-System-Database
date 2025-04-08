@@ -61,9 +61,9 @@ create table customers(
 create table orders(
   id SERIAL PRIMARY KEY,
   customer_id INT NOT NULL,
-  order_date TIMESTAMP DEFAULT NOW(),
+  order_date DATE DEFAULT NOW(),
   order_status order_status_enum NOT NULL,
-  total_amount DECIMAL(10,2) NOT NULL,
+  total_amount MONEY NOT NULL,
   CONSTRAINT fk_orders_customer FOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE CASCADE
 );
 
