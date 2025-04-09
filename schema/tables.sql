@@ -31,7 +31,7 @@ create table products(
   description TEXT,
   category_id INT NOT NULL,
   supplier_id INT Not NULL,
-  price DECIMAL(10,2) NOT NULL,
+  price MONEY NOT NULL,
   stock_quantity INT NOT NULL DEFAULT 0,
   created_at TIMESTAMP DEFAULT NOW(),
   updated_at TIMESTAMP DEFAULT NOW(),
@@ -69,10 +69,12 @@ create table orders(
 
 create table orderDetails(
   id SERIAL PRIMARY KEY,
+  order_id INT NOT NULL,
   product_id INT NOT NULL,
   quantity INT CHECK (quantity > 0),
-  unit_price DECIMAL(10,2) NOT NULL,
-  total_price DECIMAL(10,2) NOT NULL,
+  unit_price MONEY NOT NULL,
+  total_price MONEY NOT NULL,
+  CONSTRAINT fk_orderDetails_order FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE,
   CONSTRAINT fk_orderDetails_product FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 );
 
