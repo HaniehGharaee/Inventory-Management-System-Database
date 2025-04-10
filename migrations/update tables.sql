@@ -23,3 +23,11 @@ USING total_price :: MONEY
 ALTER TABLE products
 ALTER COLUMN price TYPE MONEY
 USING price :: MONEY
+---------------------------------------------------------------
+ALTER TABLE payments
+ALTER COLUMN payment_date TYPE DATE
+USING payment_date :: DATE
+---------------------------------------------------------------
+ALTER TABLE payments
+ALTER COLUMN amount TYPE MONEY
+USING amount :: MONEY

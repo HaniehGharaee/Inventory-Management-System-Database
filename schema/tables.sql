@@ -81,8 +81,8 @@ create table orderDetails(
 create table payments(
   id SERIAL PRIMARY KEY,
   order_id INT NOT NULL,
-  amount DECIMAL(10,2) NOT NULL,
-  payment_date TIMESTAMP DEFAULT NOW(),
+  amount MONEY NOT NULL,----
+  payment_date DATE DEFAULT NOW(),---------
   payment_method payment_method_enum NOT NULL,
   CONSTRAINT fk_payments_order FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE
 );
