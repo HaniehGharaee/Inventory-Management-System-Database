@@ -24,14 +24,14 @@ VALUES
 
 INSERT INTO suppliers (id, name, contact_name, phone, email, address, created_at, updated_at)
 VALUES
-      (1, 'Exotic Liquid', 'Charlotte Cooper', '(171) 555-2222', Null, '49 Gilbert St.', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00'),
-      (2, 'New Orleans Cajun Delights', 'Shelley Burke', '(100) 555-4822', Null, 'P.O. Box 78934' , '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' ),
+      (1, 'Exotic Liquid', 'Charlotte Cooper', '(171) 555-2222', Null, 'Washington DC. 49 Gilbert St.', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00'),
+      (2, 'New Orleans Cajun Delights', 'Shelley Burke', '(100) 555-4822', Null, 'Washington DC. P.O. Box 78934' , '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' ),
       (3, 'Specialty Biscuits, Ltd.', 'Peter Wilson', '(161) 555-4448',Null, '29 King Way', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00'),
-      (4, 'Bigfoot Breweries', 'Cheryl Saylor', '(503) 555-9931',Null, '3400-8th Avenue Suite 210', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' ),
+      (4, 'Bigfoot Breweries', 'Cheryl Saylor', '(503) 555-9931',Null, 'Washington DC. 3400-8th Avenue Suite 210', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' ),
       (5, 'New England Seafood Cannery', 'Robb Merchant', '(617) 555-3267',Null, 'Order Processing Dept. 2100 Paul Revere Blvd.' ,  '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' ),
       (6, 'Ma Maison', 	'Jean-Guy Lauzon', '(514) 555-9022', Null, '2960 Rue St. Laurent', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' ),
       (7, 'Heli Süßwaren GmbH & Co. KG', 'Petra Winkler' , '(010) 9984510' , Null, 'Tiergartenstraße 5', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00') ,
-      (8, 'Plutzer Lebensmittelgroßmärkte AG', 'Martin Bein', '(069) 992755', Null, 'Bogenallee 51' , '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' ),
+      (8, 'Plutzer Lebensmittelgroßmärkte AG', 'Martin Bein', '(069) 992755', Null, 'Washington DC. Bogenallee 51' , '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' ),
 	(9, 'Nord-Ost-Fisch Handelsgesellschaft mbH', 'Sven Petersen', '(04721) 8713', Null, 'Frahmredder 112a', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' );
 
 INSERT INTO products (id, name, description, supplier_id, category_id, price, stock_quantity, created_at, updated_at )
@@ -79,5 +79,14 @@ VALUES
       (4, 10251, '$200.000', '2025-04-06', 'Credit Card'),
       (5, 10252, '$145.600', '2025-04-06', 'Credit Card'),
       (6, 10253, '$75.650', '2025-04-06', 'Cash'),
+
+INSERT INTO shipment (id, order_id, tracking_number, status, delivery_date)
+VALUES 
+      (1, 10248, 000123, 'Delivered', '2025-04-08'),
+      (2, 10249, 000124, 'Delivered', '2025-04-08'),
+      (3, 10250, 000125, 'Delivered', '2025-04-08'),
+      (4, 10251, 000126, 'In Transit', '2025-04-09'),
+      (5, 10252, 000127, 'In Transit', '2025-04-09'),
+      (6, 10253, 000128, 'In Transit', '2025-04-09')
 
 	  

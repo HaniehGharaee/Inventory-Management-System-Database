@@ -81,8 +81,8 @@ create table orderDetails(
 create table payments(
   id SERIAL PRIMARY KEY,
   order_id INT NOT NULL,
-  amount MONEY NOT NULL,----
-  payment_date DATE DEFAULT NOW(),---------
+  amount MONEY NOT NULL,
+  payment_date DATE DEFAULT NOW(),
   payment_method payment_method_enum NOT NULL,
   CONSTRAINT fk_payments_order FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE
 );
@@ -90,9 +90,9 @@ create table payments(
 create table shipment(
   id SERIAL PRIMARY KEY,
   order_id INT NOT NULL,
-  tracking_number INT NOT NULL,
+  tracking_number INT NOT NULL UNIQUE,
   status status_enum NOT NULL,
-  delivery_date TIMESTAMP DEFAULT NOW(),
+  delivery_date DATE DEFAULT NOW(),
   CONSTRAINT fk_shipment_order FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE
 );
 
