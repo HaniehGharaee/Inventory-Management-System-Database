@@ -31,3 +31,11 @@ USING payment_date :: DATE
 ALTER TABLE payments
 ALTER COLUMN amount TYPE MONEY
 USING amount :: MONEY
+---------------------------------------------------------------
+ALTER TABLE shipment
+ADD CONSTRAINT unique_tracking_number UNIQUE (tracking_number)
+---------------------------------------------------------------
+ALTER TABLE shipment
+ALTER COLUMN delivery_date TYPE DATE
+USING delivery_date :: DATE
+---------------------------------------------------------------
