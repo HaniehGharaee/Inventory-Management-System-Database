@@ -9,7 +9,7 @@ VALUES
  (7, 'Peter Franken', 'Berliner Platz 43','49-4816003', 'peter.franken@gmail.com', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00'),
  (8, 'Sven Ottlieb', 'Walserweg 21', '49-7866003', 'sven.ottlieb@gmail.com', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00'),
  (9, 'Rita Müller', 'Adenauerallee 900', '49-5816003', 'rita.müller@yahoo.com', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00'),
- (10, 'Horst Kloss', 'Taucherstraße 10', '49-9866003', 'horst.kloss@yahoo.com', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00');
+ (10, 'Horst Kloss', 'Taucherstraße 10', '49-9866003', 'horst.kloss@yahoo.com', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00')
 
 INSERT INTO categories (id, name, description, created_at, updated_at)
 VALUES
@@ -19,8 +19,8 @@ VALUES
       (4, 'Dairy Products',	'Cheeses', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' ),
       (5, 'Grains/Cereals', 'Breads, crackers, pasta, and cereal', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' ),
       (6, 'Meat/Poultry', 'Prepared meats', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' ),
-      (7, 'Produce', 'Dried fruit and bean curd', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00') ,
-      (8, 'Seafood',  'Seaweed and fish', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' );
+      (7, 'Produce', 'Dried fruit and bean curd', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00'),
+      (8, 'Seafood',  'Seaweed and fish', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' )
 
 INSERT INTO suppliers (id, name, contact_name, phone, email, address, created_at, updated_at)
 VALUES
@@ -32,7 +32,7 @@ VALUES
       (6, 'Ma Maison', 	'Jean-Guy Lauzon', '(514) 555-9022', Null, '2960 Rue St. Laurent', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' ),
       (7, 'Heli Süßwaren GmbH & Co. KG', 'Petra Winkler' , '(010) 9984510' , Null, 'Tiergartenstraße 5', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00') ,
       (8, 'Plutzer Lebensmittelgroßmärkte AG', 'Martin Bein', '(069) 992755', Null, 'Washington DC. Bogenallee 51' , '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' ),
-	(9, 'Nord-Ost-Fisch Handelsgesellschaft mbH', 'Sven Petersen', '(04721) 8713', Null, 'Frahmredder 112a', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' );
+	(9, 'Nord-Ost-Fisch Handelsgesellschaft mbH', 'Sven Petersen', '(04721) 8713', Null, 'Frahmredder 112a', '2025-04-06T09:40:41+00:00', '2025-04-06T09:40:41+00:00' )
 
 INSERT INTO products (id, name, description, supplier_id, category_id, price, stock_quantity, created_at, updated_at )
 VALUES
@@ -43,7 +43,7 @@ VALUES
 	(5, 'Organic Dried Pears', '12 - 1 lb pkgs.', 3, 7, '$30', 12, '2025-04-07T05:27:47+00:00', '2025-04-07T05:27:47+00:00'),
 	(6, 'Cranberry Sauce', '12 - 12 oz jars', 3, 2, '$40', 12, '2025-04-07T05:27:47+00:00', '2025-04-07T05:27:47+00:00'),
 	(7, 'Konbu', '2 kg box ', 6, 8, '$6', 2, '2025-04-07T05:27:47+00:00', '2025-04-07T05:27:47+00:00'),
-	(8, 'Tofu', '40 - 100 g pkgs.', 6, 7, '$23.25', 40, '2025-04-07T05:27:47+00:00', '2025-04-07T05:27:47+00:00');
+	(8, 'Tofu', '40 - 100 g pkgs.', 6, 7, '$23.25', 40, '2025-04-07T05:27:47+00:00', '2025-04-07T05:27:47+00:00')
     
 INSERT INTO orders (id, customer_id, order_date, order_status, total_amount )
  VALUES 
@@ -56,7 +56,7 @@ INSERT INTO orders (id, customer_id, order_date, order_status, total_amount )
        (10254, 7, '2025-04-08', 'Pending', '$92.575'),
        (10255, 8, '2025-04-08', 'Pending', '$19.575'),
        (10256, 9, '2025-04-08', 'Pending', '$75.650'),
-       (10257, 10, '2025-04-08', 'Cancelled', '$137.500');
+       (10257, 10, '2025-04-08', 'Cancelled', '$137.500')
 
 INSERT INTO orderDetails (id, order_id, product_id, quantity, unit_price, total_price)
 VALUES
@@ -69,7 +69,7 @@ VALUES
       (7, 10254, 5, 2, '$30', '$60'),
       (8, 10255, 8, 3, '$21.35', '$64.05'),
       (9, 10256, 4, 1, '$25', '$25'),
-      (10, 10257, 6, 1, '$40', '$40');
+      (10, 10257, 6, 1, '$40', '$40')
 
 INSERT INTO payments (id, order_id, amount, payment_date, payment_method)
 VALUES
@@ -78,7 +78,7 @@ VALUES
       (3, 10250, '$85.675', '2025-04-04', 'Credit Card'),
       (4, 10251, '$200.000', '2025-04-06', 'Credit Card'),
       (5, 10252, '$145.600', '2025-04-06', 'Credit Card'),
-      (6, 10253, '$75.650', '2025-04-06', 'Cash'),
+      (6, 10253, '$75.650', '2025-04-06', 'Cash')
 
 INSERT INTO shipment (id, order_id, tracking_number, status, delivery_date)
 VALUES 
@@ -88,5 +88,17 @@ VALUES
       (4, 10251, 000126, 'In Transit', '2025-04-09'),
       (5, 10252, 000127, 'In Transit', '2025-04-09'),
       (6, 10253, 000128, 'In Transit', '2025-04-09')
+
+INSERT INTO inventory (id, product_id, initial_stock, current_stock, last_updated)
+VALUES
+      (1, 1, 100, 20, '2025-04-13T05:29:07+00:00'),
+      (2, 2, 300, 100, '2025-04-13T05:29:07+00:00'),
+      (3, 3, 50, 50, '2025-04-13T05:29:07+00:00'),
+      (4, 4, 100, 75, '2025-04-13T05:29:07+00:00'),
+      (5, 5, 200, 100, '2025-04-13T05:29:07+00:00'),
+      (6, 6, 670, 190, '2025-04-13T05:29:07+00:00'),
+      (7, 7, 240, 200, '2025-04-13T05:29:07+00:00'),
+      (8, 8, 500, 400, '2025-04-13T05:29:07+00:00')
+
 
 	  
