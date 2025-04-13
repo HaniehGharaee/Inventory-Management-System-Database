@@ -39,3 +39,5 @@ ALTER TABLE shipment
 ALTER COLUMN delivery_date TYPE DATE
 USING delivery_date :: DATE
 ---------------------------------------------------------------
+DROP TABLE customers ---Remove the customers table
+---------------------------------------------------------------

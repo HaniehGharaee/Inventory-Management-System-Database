@@ -63,7 +63,52 @@ WHERE id IN (2, 4, 8)
 UPDATE suppliers
 SET contact_name = 'Juan'
 WHERE LOWER(address) LIKE '%Washington DC%';
----------------------------------------------------------------------------------------------
+---------------------------------------------------------
 SELECT * FROM suppliers
 WHERE address LIKE '%Washington DC%';
-
+----------------------------------------------------------------- 
+DELETE FROM customers WHERE name='Peter Franken' 
+DELETE FROM customers ---DELETE All Records
+-----------------------------------------------------------------
+SELECT TOP 3 * FROM customers; ---JUST SQL Server (Microsoft SQL)
+SELECT * FROM customers -------Correct query in PostgreSQL:
+LIMIT 3;
+SELECT TOP 50 PERCENT * FROM customers;---JUST SQL Server
+-------------------------------------------------------------------
+SELECT * FROM customers
+FETCH FIRST 3 ROWS ONLY;
+-------------------------------------------------------------------
+SELECT * FROM inventory
+WHERE current_stock < 100
+LIMIT 3;
+--------------------------------------------------------------------
+SELECT * FROM suppliers
+ORDER BY name DESC
+LIMIT 3; ----OR FETCH FIRST 3 ROWS ONLY;
+--------------------------------------------------------------------
+SELECT MIN(price)
+FROM Products ---it can with WHERE
+SELECT MAX(price)
+FROM products ---it can with WHERE
+--------------------------------------------------------------------
+SELECT MIN(price) AS SmallestPrice
+FROM Products
+----------------------------------------------------------------------------------------------------------
+SELECT MIN(price) AS SmallestPrice, category_id
+FROM products
+GROUP BY category_id ---Returns the lowest price for each category based on how many categories you have.
+------------------------------------------------------------------------------------------------------------
+SELECT COUNT(*)
+FROM products ---it can with WHERE
+------------------------------------------------------------------------------------------------------------
+SELECT COUNT(id)
+FROM products
+WHERE price > '$20'
+------------------------------------------------------------------------------------------------------------
+SELECT COUNT (DISTINCT quantity) As "quantity Orde Details"
+FROM orderDetails
+-------------------------------------------------------------------------------------------------------------
+SELECT COUNT(*) As "Number of records", quantity
+FROM orderDetails
+GROUP BY quantity
+-------------------------------------------------------------------------------------------------------------
