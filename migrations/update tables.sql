@@ -41,3 +41,11 @@ USING delivery_date :: DATE
 ---------------------------------------------------------------
 DROP TABLE customers ---Remove the customers table
 ---------------------------------------------------------------
+ALTER TABLE orderDetails DROP COLUMN product_id
+------------------------------------------------------------------
+ALTER TABLE orderDetails ADD COLUMN product_id INT NOT NULL DEFAULT 0
+----------------------------------------------------------------------
+ALTER TABLE returns DROP COLUMN product_id
+----------------------------------------------------------------------
+ALTER TABLE returns ADD COLUMN order_detail_id INT NOT NULL DEFAULT 0
+

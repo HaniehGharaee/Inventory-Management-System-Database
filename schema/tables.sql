@@ -99,7 +99,7 @@ create table shipment(
 create table returns(
   id SERIAL PRIMARY KEY,
   order_id INT NOT NULL,
-  product_id INT NOT NULL,
+  order_detail_id INT NOT NULL,
   quantity INT CHECK (quantity > 0),
   return_date TIMESTAMP DEFAULT NOW(),
   return_reason VARCHAR(255) NOT NULL,
