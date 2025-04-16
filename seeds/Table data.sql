@@ -56,7 +56,8 @@ INSERT INTO orders (id, customer_id, order_date, order_status, total_amount )
        (10254, 7, '2025-04-08', 'Pending', '$92.575'),
        (10255, 8, '2025-04-08', 'Pending', '$19.575'),
        (10256, 9, '2025-04-08', 'Pending', '$75.650'),
-       (10257, 10, '2025-04-08', 'Cancelled', '$137.500')
+       (10257, 10, '2025-04-08', 'Cancelled', '$137.500'),
+       (10258, 11, '2025-04-08', 'Shipped', '$100.500')
 
 INSERT INTO orderDetails (id, order_id, product_id, quantity, unit_price, total_price)
 VALUES
@@ -69,7 +70,8 @@ VALUES
       (7, 10254, 5, 2, '$30', '$60'),
       (8, 10255, 8, 3, '$21.35', '$64.05'),
       (9, 10256, 4, 1, '$25', '$25'),
-      (10, 10257, 6, 1, '$40', '$40')
+      (10, 10257, 6, 1, '$40', '$40'),
+      (11, 10258, 6, 2, '$50', '$100')
 
 INSERT INTO payments (id, order_id, amount, payment_date, payment_method)
 VALUES
@@ -87,7 +89,11 @@ VALUES
       (3, 10250, 000125, 'Delivered', '2025-04-08'),
       (4, 10251, 000126, 'In Transit', '2025-04-09'),
       (5, 10252, 000127, 'In Transit', '2025-04-09'),
-      (6, 10253, 000128, 'In Transit', '2025-04-09')
+      (6, 10253, 000128, 'In Transit', '2025-04-09'),
+      (7, 10254, 000129, 'Returned', '2025-04-14'),
+      (8, 10255, 000130, 'Returned', '2025-04-14'),
+      (9, 10256, 000131, 'Returned', '2025-04-14'),
+      (10, 10258, 000132, 'Returned', '2025-04-14')
 
 INSERT INTO inventory (id, product_id, initial_stock, current_stock, last_updated)
 VALUES
@@ -99,6 +105,13 @@ VALUES
       (6, 6, 670, 190, '2025-04-13T05:29:07+00:00'),
       (7, 7, 240, 200, '2025-04-13T05:29:07+00:00'),
       (8, 8, 500, 400, '2025-04-13T05:29:07+00:00')
+
+INSERT INTO returns (id, order_id, order_detail_id, quantity, return_date, return_reason)
+VALUES
+      (1, 10254, 7, 10, '2025-04-14', 'Product quality problem'),
+      (2, 10255, 8, 5, '2025-04-14', 'Expired expiration date'),
+      (3, 10256, 9, 4, '2025-04-14', 'Incorrect product shipment'),
+      (4, 10258, 11, 2, '2025-04-14', 'Incomplete shipment (part of the order not shipped)')
 
 
 	  

@@ -112,3 +112,8 @@ SELECT COUNT(*) As "Number of records", quantity
 FROM orderDetails
 GROUP BY quantity
 -------------------------------------------------------------------------------------------------------------
+SELECT SUM(quantity)
+FROM orderDetails ---it can with WHERE
+WHERE product_id = 11;
+-------------------------------------------------------------------------------------------------------------
+
