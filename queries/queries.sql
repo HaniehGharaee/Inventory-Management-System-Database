@@ -112,8 +112,22 @@ SELECT COUNT(*) As "Number of records", quantity
 FROM orderDetails
 GROUP BY quantity
 -------------------------------------------------------------------------------------------------------------
-SELECT SUM(quantity)
+SELECT SUM(quantity) AS total
 FROM orderDetails ---it can with WHERE
 WHERE product_id = 11;
 -------------------------------------------------------------------------------------------------------------
+--------------------test in postgresql-------------------------------------
+SELECT initial_stock, SUM(current_stock * 10) AS [Total Quantity]
+From inventory 
+GROUP BY initial_stock
+---------------------------in sum we have a query with LEFT JOIN----------------------------------------------
+SELECT AVG(initial_stock) AS [Average Price]
+FROM inventory
+WHERE product_id = 8
+--------------------------------------------------------------------------------------------------------------
+SELECT * FROM orderDetails AS AveragePrice
+WHERE total_price > (SELECT AVG(total_price) FROM orderDetails);
+GROUP BY order_id
+--------------------------------------------------------------------------------------------------------------
+
 
