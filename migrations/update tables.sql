@@ -48,4 +48,12 @@ ALTER TABLE orderDetails ADD COLUMN product_id INT NOT NULL DEFAULT 0
 ALTER TABLE returns DROP COLUMN product_id
 ----------------------------------------------------------------------
 ALTER TABLE returns ADD COLUMN order_detail_id INT NOT NULL DEFAULT 0
+-----------------------------------------------------------------------
+ALTER TABLE transactions
+ALTER COLUMN unit_price TYPE MONEY
+USING unit_price :: MONEY
+------------------------------------------------------------------------
+ALTER TABLE transactions
+ALTER COLUMN total_price TYPE MONEY
+USING total_price :: MONEY
 

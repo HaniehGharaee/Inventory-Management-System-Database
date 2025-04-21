@@ -114,20 +114,26 @@ GROUP BY quantity
 -------------------------------------------------------------------------------------------------------------
 SELECT SUM(quantity) AS total
 FROM orderDetails ---it can with WHERE
-WHERE product_id = 11;
+--WHERE product_id = 11
+GROUP BY order_id
 -------------------------------------------------------------------------------------------------------------
---------------------test in postgresql-------------------------------------
-SELECT initial_stock, SUM(current_stock * 10) AS [Total Quantity]
+SELECT initial_stock, SUM(current_stock * 10) AS "Total Quantity" ---AS [Total Quantity] is not support in postgreSql
 From inventory 
 GROUP BY initial_stock
 ---------------------------in sum we have a query with LEFT JOIN----------------------------------------------
-SELECT AVG(initial_stock) AS [Average Price]
+SELECT AVG(initial_stock) AS "Average Price"
 FROM inventory
 WHERE product_id = 8
 --------------------------------------------------------------------------------------------------------------
-SELECT * FROM orderDetails AS AveragePrice
-WHERE total_price > (SELECT AVG(total_price) FROM orderDetails);
-GROUP BY order_id
+SELECT * 
+FROM orderDetails AS "AveragePrice"
+WHERE total_price::numeric > (
+  SELECT AVG(total_price::numeric)
+  FROM orderDetails
+);
 --------------------------------------------------------------------------------------------------------------
+SELECT * FROM customers
+WHERE address LIKE '%r.57'
+-----------------------------------------------------------------------------------------------------------
 
 
