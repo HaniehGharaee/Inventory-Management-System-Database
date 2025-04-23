@@ -135,5 +135,12 @@ WHERE total_price::numeric > (
 SELECT * FROM customers
 WHERE address LIKE '%r.57'
 -----------------------------------------------------------------------------------------------------------
+SELECT * From customers
+WHERE name LIKE '%ü%'
+  OR address LIKE '%ß%'
+  OR name LIKE '%z%'
+----------------------------------------------------------------
+SELECT * FROM products
+WHERE UPPER(LEFT(name, 1)) BETWEEN 'A' AND 'F'
 
 
