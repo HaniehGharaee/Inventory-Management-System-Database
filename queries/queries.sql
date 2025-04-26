@@ -135,5 +135,31 @@ WHERE total_price::numeric > (
 SELECT * FROM customers
 WHERE address LIKE '%r.57'
 -----------------------------------------------------------------------------------------------------------
-
-
+SELECT * From customers
+WHERE name LIKE '%ü%'
+  OR address LIKE '%ß%'
+  OR name LIKE '%z%'
+-----------------------------------------------------------------------------------
+SELECT * FROM products
+WHERE UPPER(LEFT(name, 1)) BETWEEN 'A' AND 'F'
+-----------------------------------------------------------------------------------
+SELECT * FROM orders
+WHERE order_status IN ('Pending', 'Shipped', 'Delivered')
+-------------------------------------------------------------------------------------
+SELECT * FROM orders
+WHERE order_status Not IN ('Shipped', 'Delivered')
+--------------------------------------------------------------------------------------
+SELECT * FROM transactions
+WHERE return_id IN (SELECT return_id FROM returns)
+--------------------------------------------------------------------------------------
+SELECT * FROM transactions
+WHERE return_id Not IN (SELECT return_id FROM returns)---is empty
+-----------------------------------------------------------------------------------------
+SELECT * FROM payments
+WHERE payment_date BETWEEN '2025-04-04' AND '2025-04-06'
+AND order_id IN (10248, 10250, 10253)
+AND payment_method = 'Credit Card'
+-------------------------------------------------------------------------------------------
+SELECT name, address || ', ' || phone || ', ' || email As address
+FROM customers
+-------------------------------------------------------------------------------------------
