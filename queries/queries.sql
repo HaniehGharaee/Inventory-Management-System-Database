@@ -162,4 +162,44 @@ AND payment_method = 'Credit Card'
 -------------------------------------------------------------------------------------------
 SELECT name, address || ', ' || phone || ', ' || email As address
 FROM customers
--------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------
+SELECT orders.id, customers.name, orders.order_date FROM orders
+INNER JOIN customers ON orders.customer_id=customers.id
+--------------------------------------------------------------------------------------------------------------------------------------------
+SELECT products.id AS "productID", products.name AS "productName", categories.name AS "categoryName"
+FROM products
+INNER JOIN categories on products.category_id = categories.id
+--------------------------------------------------------------------------------------------------------------------------------------------
+SELECT products.id AS "productID", products.name AS "productName", categories.name AS "categoryName", suppliers.name AS "suppliersName"
+FROM ((products
+INNER JOIN categories on products.category_id = categories.id)
+INNER JOIN suppliers on products.supplier_id = suppliers.id)
+----------------------------------------------------------------------------------------------------------------------------------------------
+SELECT inventory.id AS "inventoryID", products.name AS "productName", initial_stock, Current_stock, last_updated 
+FROM inventory
+LEFT JOIN products ON inventory.product_id = products.id
+ORDER BY products.name
+----------------------------------------------------------------------------------------------------------------------------------------------
+SELECT transactions.id AS "transactionsID", returns.id AS "returnsID", returns.quantity, total_price, return_date, return_reason 
+FROM transactions 
+RIGHT JOIN returns ON transactions.return_id = returns.id
+ORDER BY quantity DESC
+-----------------------------------------------------------------------------------------------------------------------------------------------
+SELECT shipment.id AS "shipmentID", order_id, tracking_number, status, customer_id, order_status
+FROM shipment
+FULL JOIN orders ON shipment.order_id = orders.id
+ORDER BY 
+  CASE status
+      WHEN 'In Transit' THEN 1
+      WHEN 'Delivered' THEN 2
+      WHEN 'Returned' THEN 3
+      ELSE 4 
+  END;
+------------------------------------------------------------------------------------------------------------------------------------------------
+SELECT A.name AS "productName1", B.name AS "productName2", A.supplier_id 
+FROM products A, products B
+WHERE A.id <> B.id
+AND A.supplier_id = B.supplier_id
+ORDER BY A.supplier_id
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
